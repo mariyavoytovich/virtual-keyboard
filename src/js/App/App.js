@@ -1,4 +1,4 @@
-import { Component } from "../Base/Component";
+import { UIElement } from "../Base/UIElement";
 import { TextEditor } from "../Editor/TextEditor";
 import { VirtualKeyboard } from "../Keyboard/VirtualKeyboard";
 import { AppContainer } from "./AppContainer";
@@ -15,7 +15,8 @@ export class App {
         const textEditor = new TextEditor();
         const virtualKeyboard = new VirtualKeyboard();
 
-        container.addComponents(textEditor, virtualKeyboard);
+        container.addElements(textEditor, virtualKeyboard);
+        container.init();
         container.show();
     }
 }

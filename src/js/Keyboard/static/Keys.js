@@ -1,5 +1,5 @@
 const locations = {
-  GENERAL: 'General keys',
+  GENERAL: 'general-keys',
   LEFT_SIDE_MODIFIER_KEYS: 'left-side-modifier-keys',
   RIGHT_SIDE_MODIFIER_KEYS: 'right-side-modifier-keys'
 }
@@ -8,13 +8,15 @@ const locations = {
 const keyTypes = {
   KEY: 'key',
   BACKSPACE: 'backspace',
-  TAB: 'Tab',
+  TAB: 'tab',
   CAPSLOCK: 'caps-lock',
   ENTER: 'enter',
   SHIFT: 'shift',
   ARROW: 'arrow',
   CONTROL: 'control',
-  SPACE: 'space'
+  SPACE: 'space',
+  ALT: 'alt',
+  META: 'meta'
 }
 
 export const keysByRows =
@@ -360,7 +362,7 @@ export const keysByRows =
         code: 'ShiftLeft',
         keyCode: 16,
         location: locations.LEFT_SIDE_MODIFIER_KEYS,
-        keyName: keyTypes.CAPSLOCK
+        keyName: keyTypes.SHIFT
       },
       {
         key: 'z',
@@ -474,7 +476,7 @@ export const keysByRows =
         code: 'MetaLeft',
         keyCode: 91,
         location: locations.LEFT_SIDE_MODIFIER_KEYS,
-        keyName: keyTypes.KEY
+        keyName: keyTypes.META
       },
       {
         key: 'Alt',
@@ -482,7 +484,7 @@ export const keysByRows =
         code: 'AltLeft',
         keyCode: 18,
         location: locations.LEFT_SIDE_MODIFIER_KEYS,
-        keyName: keyTypes.KEY
+        keyName: keyTypes.ALT
       },
       {
         key: '',
@@ -498,7 +500,7 @@ export const keysByRows =
         code: 'AltRight',
         keyCode: 18,
         location: locations.RIGHT_SIDE_MODIFIER_KEYS,
-        keyName: keyTypes.KEY
+        keyName: keyTypes.ALT
       },
       {
         key: 'Ctrl',
@@ -530,7 +532,7 @@ export const keysByRows =
         code: 'ArrowRight',
         keyCode: 39,
         location: locations.GENERAL,
-        keyName: keyTypes.KEY
+        keyName: keyTypes.ARROW
       }
     ]
   ]

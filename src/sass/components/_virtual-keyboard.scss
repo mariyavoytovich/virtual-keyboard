@@ -1,0 +1,62 @@
+.virtual-keyboard {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: $keyboard-rows-margin;
+  text-align: center;
+  padding: $element-padding;
+}
+
+.keyboard-row {
+  display: flex;
+  justify-content: space-between;
+  gap: $keyboard-buttons-margin;
+}
+
+.keyboard-button {
+  width: $button-size;
+  height: $button-size;
+  color: $button-color;
+  background: $button-backgrount-color;
+  line-height: $button-size;
+  border-radius: $button-border-radius;
+  user-select: none;
+  cursor: pointer;
+
+  &.backspace-button,
+  &.tab-button,
+  &.caps-lock-button,
+  &.enter-button,
+  &.shift-button,
+  &.arrow-button,
+  &.control-button,
+  &.alt-button,
+  &.meta-button {
+    background-color: $control-button-color;
+    font-weight: $font-weight;
+  }
+
+  &.tab-button {
+    width: $tab-button-widht;
+  }
+
+  &.caps-lock-button {
+    width: $caps-lock-button-widht;
+  }
+
+  &.shift-button.left-side-modifier-keys {
+    width: $shift-button-widht;
+  }
+
+  &.backspace-button {
+    width: $backspace-button-widht;
+  }
+
+  &.space-button {
+    width: $space-button-widht;
+  }
+
+  &.enter-button{
+    width: $enter-button-widht;
+  }
+}

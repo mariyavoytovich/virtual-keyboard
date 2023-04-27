@@ -9,12 +9,11 @@ export const cssClasses = {
 
 export class Button extends ItemElement {
 
-  constructor({ key, shiftKey, code, keyCode, location, keyType }) {
+  constructor({ key, shiftKey, code, location, keyType }) {
     super();
     this._key = key;
     this._shiftKey = shiftKey;
     this._code = code;
-    this._keyCode = keyCode;
     this._location = location;
     this._keyType = keyType;
   }

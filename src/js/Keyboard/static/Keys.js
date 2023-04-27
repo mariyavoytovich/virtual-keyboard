@@ -13,7 +13,6 @@ export const keysByRows =
         key: '`',
         shiftKey: '~',
         code: 'Backquote',
-        keyCode: 192,
         location: locations.GENERAL,
         keyType: keyType.KEY
       },
@@ -21,7 +20,6 @@ export const keysByRows =
         key: '1',
         shiftKey: '!',
         code: 'Digit1',
-        keyCode: 49,
         location: locations.GENERAL,
         keyType: keyType.KEY
       },
@@ -29,7 +27,6 @@ export const keysByRows =
         key: '2',
         shiftKey: '@',
         code: 'Digit2',
-        keyCode: 50,
         location: locations.GENERAL,
         keyType: keyType.KEY
       },
@@ -37,7 +34,6 @@ export const keysByRows =
         key: '3',
         shiftKey: '#',
         code: 'Digit3',
-        keyCode: 51,
         location: locations.GENERAL,
         keyType: keyType.KEY
       },
@@ -45,7 +41,6 @@ export const keysByRows =
         key: '4',
         shiftKey: '$',
         code: 'Digit4',
-        keyCode: '52',
         location: locations.GENERAL,
         keyType: keyType.KEY
       },
@@ -53,7 +48,6 @@ export const keysByRows =
         key: '5',
         shiftKey: '%',
         code: 'Digit5',
-        keyCode: '53',
         location: locations.GENERAL,
         keyType: keyType.KEY
       },
@@ -61,7 +55,6 @@ export const keysByRows =
         key: '6',
         shiftKey: '^',
         code: 'Digit6',
-        keyCode: 54,
         location: locations.GENERAL,
         keyType: keyType.KEY
       },
@@ -69,7 +62,6 @@ export const keysByRows =
         key: '7',
         shiftKey: '&',
         code: 'Digit7',
-        keyCode: 55,
         location: locations.GENERAL,
         keyType: keyType.KEY
       },
@@ -77,7 +69,6 @@ export const keysByRows =
         key: '8',
         shiftKey: '*',
         code: 'Digit8',
-        keyCode: 56,
         location: locations.GENERAL,
         keyType: keyType.KEY
       },
@@ -85,7 +76,6 @@ export const keysByRows =
         key: '9',
         shiftKey: '(',
         code: 'Digit9',
-        keyCode: 57,
         location: locations.GENERAL,
         keyType: keyType.KEY
       },
@@ -93,7 +83,6 @@ export const keysByRows =
         key: '0',
         shiftKey: ')',
         code: 'Digit0',
-        keyCode: 48,
         location: locations.GENERAL,
         keyType: keyType.KEY
       },
@@ -101,7 +90,6 @@ export const keysByRows =
         key: '-',
         shiftKey: '_',
         code: 'Minus',
-        keyCode: '89',
         location: locations.GENERAL,
         keyType: keyType.KEY
       },
@@ -109,7 +97,6 @@ export const keysByRows =
         key: '=',
         shiftKey: '+',
         code: 'Equal',
-        keyCode: 187,
         location: locations.GENERAL,
         keyType: keyType.KEY
       },
@@ -117,7 +104,6 @@ export const keysByRows =
         key: 'Backspace',
         shiftKey: 'Backspace',
         code: 'Backspace',
-        keyCode: 8,
         location: locations.GENERAL,
         keyType: keyType.BACKSPACE
       },
@@ -127,7 +113,6 @@ export const keysByRows =
         key: 'Tab',
         shiftKey: 'Tab',
         code: 'Tab',
-        keyCode: 9,
         location: locations.GENERAL,
         keyType: keyType.TAB
       },
@@ -135,7 +120,6 @@ export const keysByRows =
         key: 'q',
         shiftKey: 'Q',
         code: 'KeyQ',
-        keyCode: 81,
         location: locations.GENERAL,
         keyType: keyType.KEY
       },
@@ -143,7 +127,6 @@ export const keysByRows =
         key: 'w',
         shiftKey: 'W',
         code: 'KeyW',
-        keyCode: 87,
         location: locations.GENERAL,
         keyType: keyType.KEY
       },
@@ -151,7 +134,6 @@ export const keysByRows =
         key: 'e',
         shiftKey: 'E',
         code: 'KeyE',
-        keyCode: 69,
         location: locations.GENERAL,
         keyType: keyType.KEY
       },
@@ -159,7 +141,6 @@ export const keysByRows =
         key: 'r',
         shiftKey: 'R',
         code: 'KeyR',
-        keyCode: 82,
         location: locations.GENERAL,
         keyType: keyType.KEY
       },
@@ -167,7 +148,6 @@ export const keysByRows =
         key: 't',
         shiftKey: 'T',
         code: 'KeyT',
-        keyCode: 84,
         location: locations.GENERAL,
         keyType: keyType.KEY
       },
@@ -175,7 +155,6 @@ export const keysByRows =
         key: 'y',
         shiftKey: 'Y',
         code: 'KeyY',
-        keyCode: 89,
         location: locations.GENERAL,
         keyType: keyType.KEY
       },
@@ -183,7 +162,6 @@ export const keysByRows =
         key: 'u',
         shiftKey: 'U',
         code: 'KeyU',
-        keyCode: 85,
         location: locations.GENERAL,
         keyType: keyType.KEY
       },
@@ -191,7 +169,6 @@ export const keysByRows =
         key: 'i',
         shiftKey: 'I',
         code: 'KeyI',
-        keyCode: 73,
         location: locations.GENERAL,
         keyType: keyType.KEY
       },
@@ -199,7 +176,6 @@ export const keysByRows =
         key: 'o',
         shiftKey: 'O',
         code: 'KeyO',
-        keyCode: 79,
         location: locations.GENERAL,
         keyType: keyType.KEY
       },
@@ -207,7 +183,6 @@ export const keysByRows =
         key: 'p',
         shiftKey: 'P',
         code: 'KeyP',
-        keyCode: 80,
         location: locations.GENERAL,
         keyType: keyType.KEY
       },
@@ -215,7 +190,6 @@ export const keysByRows =
         key: '[',
         shiftKey: '{',
         code: 'BracketLeft',
-        keyCode: 219,
         location: locations.GENERAL,
         keyType: keyType.KEY
       },
@@ -223,7 +197,6 @@ export const keysByRows =
         key: ']',
         shiftKey: '}',
         code: 'BracketRight',
-        keyCode: 221,
         location: locations.GENERAL,
         keyType: keyType.KEY
       },
@@ -231,7 +204,6 @@ export const keysByRows =
         key: '\\',
         shiftKey: '|',
         code: 'Backslash',
-        keyCode: 220,
         location: locations.GENERAL,
         keyType: keyType.KEY
       }
@@ -241,7 +213,6 @@ export const keysByRows =
         key: 'Caps Lock',
         shiftKey: 'Caps Lock',
         code: 'CapsLock',
-        keyCode: 20,
         location: locations.GENERAL,
         keyType: keyType.CAPSLOCK
       },
@@ -249,7 +220,6 @@ export const keysByRows =
         key: 'a',
         shiftKey: 'A',
         code: 'KeyA',
-        keyCode: 65,
         location: locations.GENERAL,
         keyType: keyType.KEY
       },
@@ -257,7 +227,6 @@ export const keysByRows =
         key: 's',
         shiftKey: 'S',
         code: 'KeyS',
-        keyCode: 83,
         location: locations.GENERAL,
         keyType: keyType.KEY
       },
@@ -265,7 +234,6 @@ export const keysByRows =
         key: 'd',
         shiftKey: 'D',
         code: 'KeyD',
-        keyCode: 68,
         location: locations.GENERAL,
         keyType: keyType.KEY
       },
@@ -273,7 +241,6 @@ export const keysByRows =
         key: 'f',
         shiftKey: 'F',
         code: 'KeyF',
-        keyCode: 70,
         location: locations.GENERAL,
         keyType: keyType.KEY
       },
@@ -281,7 +248,6 @@ export const keysByRows =
         key: 'g',
         shiftKey: 'G',
         code: 'KeyG',
-        keyCode: 71,
         location: locations.GENERAL,
         keyType: keyType.KEY
       },
@@ -289,7 +255,6 @@ export const keysByRows =
         key: 'h',
         shiftKey: 'H',
         code: 'KeyH',
-        keyCode: 72,
         location: locations.GENERAL,
         keyType: keyType.KEY
       },
@@ -297,7 +262,6 @@ export const keysByRows =
         key: 'j',
         shiftKey: 'J',
         code: 'KeyJ',
-        keyCode: 74,
         location: locations.GENERAL,
         keyType: keyType.KEY
       },
@@ -305,7 +269,6 @@ export const keysByRows =
         key: 'k',
         shiftKey: 'K',
         code: 'KeyK',
-        keyCode: 75,
         location: locations.GENERAL,
         keyType: keyType.KEY
       },
@@ -313,7 +276,6 @@ export const keysByRows =
         key: 'l',
         shiftKey: 'L',
         code: 'KeyL',
-        keyCode: 76,
         location: locations.GENERAL,
         keyType: keyType.KEY
       },
@@ -321,7 +283,6 @@ export const keysByRows =
         key: ';',
         shiftKey: ':',
         code: 'Semicolon',
-        keyCode: 186,
         location: locations.GENERAL,
         keyType: keyType.KEY
       },
@@ -329,7 +290,6 @@ export const keysByRows =
         key: '\'',
         shiftKey: '"',
         code: 'Quote',
-        keyCode: 222,
         location: locations.GENERAL,
         keyType: keyType.KEY
       },
@@ -337,7 +297,6 @@ export const keysByRows =
         key: 'Enter',
         shiftKey: 'Enter',
         code: 'Enter',
-        keyCode: 13,
         location: locations.LEFT_SIDE_MODIFIER_KEYS,
         keyType: keyType.ENTER
       }
@@ -347,7 +306,6 @@ export const keysByRows =
         key: 'Shift',
         shiftKey: 'Shift',
         code: 'ShiftLeft',
-        keyCode: 16,
         location: locations.LEFT_SIDE_MODIFIER_KEYS,
         keyType: keyType.SHIFT
       },
@@ -355,7 +313,6 @@ export const keysByRows =
         key: 'z',
         shiftKey: 'Z',
         code: 'KeyZ',
-        keyCode: 90,
         location: locations.GENERAL,
         keyType: keyType.KEY
       },
@@ -363,7 +320,6 @@ export const keysByRows =
         key: 'x',
         shiftKey: 'X',
         code: 'KeyX',
-        keyCode: 88,
         location: locations.GENERAL,
         keyType: keyType.KEY
       },
@@ -371,7 +327,6 @@ export const keysByRows =
         key: 'c',
         shiftKey: 'C',
         code: 'KeyC',
-        keyCode: 67,
         location: locations.GENERAL,
         keyType: keyType.KEY
       },
@@ -379,7 +334,6 @@ export const keysByRows =
         key: 'v',
         shiftKey: 'V',
         code: 'KeyV',
-        keyCode: 86,
         location: locations.GENERAL,
         keyType: keyType.KEY
       },
@@ -387,7 +341,6 @@ export const keysByRows =
         key: 'b',
         shiftKey: 'B',
         code: 'KeyB',
-        keyCode: 66,
         location: locations.GENERAL,
         keyType: keyType.KEY
       },
@@ -395,7 +348,6 @@ export const keysByRows =
         key: 'n',
         shiftKey: 'N',
         code: 'KeyN',
-        keyCode: 78,
         location: locations.GENERAL,
         keyType: keyType.KEY
       },
@@ -403,7 +355,6 @@ export const keysByRows =
         key: 'm',
         shiftKey: 'M',
         code: 'KeyM',
-        keyCode: 77,
         location: locations.GENERAL,
         keyType: keyType.KEY
       },
@@ -411,7 +362,6 @@ export const keysByRows =
         key: ',',
         shiftKey: '<',
         code: 'Comma',
-        keyCode: 188,
         location: locations.GENERAL,
         keyType: keyType.KEY
       },
@@ -419,7 +369,6 @@ export const keysByRows =
         key: '.',
         shiftKey: '>',
         code: 'Period',
-        keyCode: 190,
         location: locations.GENERAL,
         keyType: keyType.KEY
       },
@@ -427,7 +376,6 @@ export const keysByRows =
         key: '/',
         shiftKey: '?',
         code: 'Slash',
-        keyCode: 191,
         location: locations.GENERAL,
         keyType: keyType.KEY
       },
@@ -435,7 +383,6 @@ export const keysByRows =
         key: '▲',
         shiftKey: '▲',
         code: 'ArrowUp',
-        keyCode: 38,
         location: locations.GENERAL,
         keyType: keyType.ARROW
       },
@@ -443,7 +390,6 @@ export const keysByRows =
         key: 'Shift',
         shiftKey: 'Shift',
         code: 'ShiftRight',
-        keyCode: 16,
         location: locations.RIGHT_SIDE_MODIFIER_KEYS,
         keyType: keyType.SHIFT
       }
@@ -453,7 +399,6 @@ export const keysByRows =
         key: 'Ctrl',
         shiftKey: 'Ctrl',
         code: 'ControlLeft',
-        keyCode: 17,
         location: locations.LEFT_SIDE_MODIFIER_KEYS,
         keyType: keyType.CONTROL
       },
@@ -461,7 +406,6 @@ export const keysByRows =
         key: 'Win',
         shiftKey: 'Win',
         code: 'MetaLeft',
-        keyCode: 91,
         location: locations.LEFT_SIDE_MODIFIER_KEYS,
         keyType: keyType.META
       },
@@ -469,7 +413,6 @@ export const keysByRows =
         key: 'Alt',
         shiftKey: 'Alt',
         code: 'AltLeft',
-        keyCode: 18,
         location: locations.LEFT_SIDE_MODIFIER_KEYS,
         keyType: keyType.ALT
       },
@@ -477,7 +420,6 @@ export const keysByRows =
         key: '',
         shiftKey: '',
         code: 'Space',
-        keyCode: 32,
         location: locations.GENERAL,
         keyType: keyType.SPACE
       },
@@ -485,7 +427,6 @@ export const keysByRows =
         key: 'Alt',
         shiftKey: 'Alt',
         code: 'AltRight',
-        keyCode: 18,
         location: locations.RIGHT_SIDE_MODIFIER_KEYS,
         keyType: keyType.ALT
       },
@@ -493,7 +434,6 @@ export const keysByRows =
         key: 'Ctrl',
         shiftKey: 'Ctrl',
         code: 'ControlRight',
-        keyCode: 17,
         location: locations.RIGHT_SIDE_MODIFIER_KEYS,
         keyType: keyType.CONTROL
       },
@@ -501,7 +441,6 @@ export const keysByRows =
         key: '◄',
         shiftKey: '◄',
         code: 'ArroLeft',
-        keyCode: 37,
         location: locations.GENERAL,
         keyType: keyType.ARROW
       },
@@ -509,7 +448,6 @@ export const keysByRows =
         key: '▼',
         shiftKey: '▼',
         code: 'ArrowDowwn',
-        keyCode: 40,
         location: locations.GENERAL,
         keyType: keyType.ARROW
       },
@@ -517,7 +455,6 @@ export const keysByRows =
         key: '►',
         shiftKey: '►',
         code: 'ArrowRight',
-        keyCode: 39,
         location: locations.GENERAL,
         keyType: keyType.ARROW
       }

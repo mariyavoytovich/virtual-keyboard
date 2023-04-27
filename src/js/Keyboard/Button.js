@@ -2,7 +2,8 @@ import { ItemElement } from "../Base/ItemElement";
 
 export const cssClasses = {
   KEYBOARD_BUTTON: 'keyboard-button',
-  BUTTON: 'button'
+  BUTTON: 'button',
+  PRESSED_BUTTON: 'pressed'
 }
 
 export class Button extends ItemElement {

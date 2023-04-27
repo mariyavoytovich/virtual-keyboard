@@ -28,19 +28,42 @@ export class VirtualKeyboard extends GroupElement {
 
   createElement() {
     const element = this.createDomNode('div', cssClasses.VIRTUAL_KEYBOARD);
-    element.addEventListener('click', (event) => this.elementClickHandler(event));
+    this.bindKeyboardEvents(element);
     return element;
   }
 
-  elementClickHandler(event){
-    const target = event.target.tagName === 'SPAN' ? event.target.closest('.key-button') : event.target;
+  bindKeyboardEvents(keyboardElement){
+    keyboardElement.addEventListener('mousedown', (event)=> this.mouseDownEventHandler(event));
+    keyboardElement.addEventListener('mouseup', (event) => this.mouseUpEventHandler(event));
+  }
 
-    if (target.classList.contains(buttonCssClasses.KEYBOARD_BUTTON)){
-      this.handleButtonClick(target)
+  mouseDownEventHandler(event){
+    const target = this.getTargetElement(event);
+    if(this.isButton(target))
+    {
+      this.handleButtonPress(target);
+      target.classList.add(buttonCssClasses.PRESSED_BUTTON);
     }
   }
 
-  handleButtonClick(buttonElement){
+  mouseUpEventHandler(event){
+    const target = this.getTargetElement(event);
+    if(this.isButton(target))
+    {
+      target.classList.remove(buttonCssClasses.PRESSED_BUTTON);
+    }
+  }
+
+  getTargetElement(event){
+    const target = event.target;
+    return  target.tagName === 'SPAN' ? target.closest('div') : target;
+  }
+
+  isButton(element){
+    return element.classList.contains(buttonCssClasses.KEYBOARD_BUTTON);
+  }
+
+  handleButtonPress(buttonElement){
     console.log(buttonElement.textContent);
     this._textEditor.print(buttonElement.textContent);
   }

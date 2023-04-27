@@ -1,6 +1,7 @@
 //Sizes
 $button-size: 40px;
 $button-border-radius: 3px;
+$button-pressed-border-radius: 10px;
 $tab-button-widht: 50px;
 $caps-lock-button-widht: 100px;
 $shift-button-widht: 100px;
@@ -20,6 +21,8 @@ $element-padding: 7px;
 //Colors
 $button-color: #ffffff;
 $button-backgrount-color: #444444;
+$button-hover-background-color: #b54c90;
+$button-pressed-background-color: #e79acb;
 $control-button-color: #222222;
 
 //Font

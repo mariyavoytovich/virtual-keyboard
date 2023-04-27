@@ -1,4 +1,5 @@
 import { ItemElement } from "../Base/ItemElement";
+import { keyCase } from "./static/KeyCase";
 
 export const cssClasses = {
   KEYBOARD_BUTTON: 'keyboard-button',
@@ -28,10 +29,17 @@ export class Button extends ItemElement {
     const button = this.createDomNode('div', ...buttonClasses);
     button.setAttribute('type', this._keyType);
 
-    const key = this.createDomNode('span');
-    key.textContent = this._key;
+    const keyDown = this.createKeyElement(this._key, keyCase.DOWN);
+    const keyUp = this.createKeyElement(this._shiftKey, keyCase.UP);
 
-    button.append(key);
+    button.append(keyDown);
+    button.append(keyUp);
     return button;
+  }
+
+  createKeyElement(key, caseKey){
+    const keyElement = this.createDomNode('span', caseKey);
+    keyElement.textContent = key;
+    return keyElement;
   }
 }

@@ -8,27 +8,30 @@ export const cssClasses = {
 
 export class Button extends ItemElement {
 
-  constructor({ key, shiftKey, code, keyCode, location, keyName }) {
+  constructor({ key, shiftKey, code, keyCode, location, keyType }) {
     super();
     this._key = key;
     this._shiftKey = shiftKey;
     this._code = code;
     this._keyCode = keyCode;
     this._location = location;
-    this._keyName = keyName;
+    this._keyType = keyType;
   }
 
   createElement() {
     const buttonClasses = [
       cssClasses.KEYBOARD_BUTTON,
       cssClasses.BUTTON,
-      `${this._keyName}-${cssClasses.BUTTON}`,
+      `${this._keyType}-${cssClasses.BUTTON}`,
       this._location ]
 
-    const container = this.createDomNode('div', ...buttonClasses);
+    const button = this.createDomNode('div', ...buttonClasses);
+    button.setAttribute('type', this._keyType);
+
     const key = this.createDomNode('span');
     key.textContent = this._key;
-    container.append(key);
-    return container;
+
+    button.append(key);
+    return button;
   }
 }

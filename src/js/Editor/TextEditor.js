@@ -25,7 +25,7 @@ export class TextEditor extends ItemElement {
     const newValue = oldValue.length === selectionStart 
                       ? this.appendValue(oldValue, value)
                       : this.insertValue(oldValue, value, selectionStart);
-                      
+
     this._textArea.value = newValue;
 
     const newSelectionStart = selectionStart + value.length;
@@ -53,5 +53,20 @@ export class TextEditor extends ItemElement {
 
   focus(){
     this._textArea.focus();
+  }
+
+  removeLeft(){
+    const selectionStart = this._textArea.selectionStart;
+    const removedCharIndex = selectionStart - 1;  
+    this.removeChar(removedCharIndex);
+    this.setTextAreaSelection(removedCharIndex);
+    this.focus();
+  }
+
+  removeChar(index){
+    const oldValue = this._textArea.value;
+    const prefix = oldValue.substring(0, index);
+    const suffix = oldValue.substring(index + 1);
+    this._textArea.value = `${prefix}${suffix}`;
   }
 }

@@ -1,22 +1,9 @@
+import { keyType } from "./KeyType";
+
 const locations = {
   GENERAL: 'general-keys',
   LEFT_SIDE_MODIFIER_KEYS: 'left-side-modifier-keys',
   RIGHT_SIDE_MODIFIER_KEYS: 'right-side-modifier-keys'
-}
-
-
-const keyTypes = {
-  KEY: 'key',
-  BACKSPACE: 'backspace',
-  TAB: 'tab',
-  CAPSLOCK: 'caps-lock',
-  ENTER: 'enter',
-  SHIFT: 'shift',
-  ARROW: 'arrow',
-  CONTROL: 'control',
-  SPACE: 'space',
-  ALT: 'alt',
-  META: 'meta'
 }
 
 export const keysByRows =
@@ -28,7 +15,7 @@ export const keysByRows =
         code: 'Backquote',
         keyCode: 192,
         location: locations.GENERAL,
-        keyName: keyTypes.KEY
+        keyType: keyType.KEY
       },
       {
         key: '1',
@@ -36,7 +23,7 @@ export const keysByRows =
         code: 'Digit1',
         keyCode: 49,
         location: locations.GENERAL,
-        keyName: keyTypes.KEY
+        keyType: keyType.KEY
       },
       {
         key: '2',
@@ -44,7 +31,7 @@ export const keysByRows =
         code: 'Digit2',
         keyCode: 50,
         location: locations.GENERAL,
-        keyName: keyTypes.KEY
+        keyType: keyType.KEY
       },
       {
         key: '3',
@@ -52,7 +39,7 @@ export const keysByRows =
         code: 'Digit3',
         keyCode: 51,
         location: locations.GENERAL,
-        keyName: keyTypes.KEY
+        keyType: keyType.KEY
       },
       {
         key: '4',
@@ -60,7 +47,7 @@ export const keysByRows =
         code: 'Digit4',
         keyCode: '52',
         location: locations.GENERAL,
-        keyName: keyTypes.KEY
+        keyType: keyType.KEY
       },
       {
         key: '5',
@@ -68,7 +55,7 @@ export const keysByRows =
         code: 'Digit5',
         keyCode: '53',
         location: locations.GENERAL,
-        keyName: keyTypes.KEY
+        keyType: keyType.KEY
       },
       {
         key: '6',
@@ -76,7 +63,7 @@ export const keysByRows =
         code: 'Digit6',
         keyCode: 54,
         location: locations.GENERAL,
-        keyName: keyTypes.KEY
+        keyType: keyType.KEY
       },
       {
         key: '7',
@@ -84,7 +71,7 @@ export const keysByRows =
         code: 'Digit7',
         keyCode: 55,
         location: locations.GENERAL,
-        keyName: keyTypes.KEY
+        keyType: keyType.KEY
       },
       {
         key: '8',
@@ -92,7 +79,7 @@ export const keysByRows =
         code: 'Digit8',
         keyCode: 56,
         location: locations.GENERAL,
-        keyName: keyTypes.KEY
+        keyType: keyType.KEY
       },
       {
         key: '9',
@@ -100,7 +87,7 @@ export const keysByRows =
         code: 'Digit9',
         keyCode: 57,
         location: locations.GENERAL,
-        keyName: keyTypes.KEY
+        keyType: keyType.KEY
       },
       {
         key: '0',
@@ -108,7 +95,7 @@ export const keysByRows =
         code: 'Digit0',
         keyCode: 48,
         location: locations.GENERAL,
-        keyName: keyTypes.KEY
+        keyType: keyType.KEY
       },
       {
         key: '-',
@@ -116,7 +103,7 @@ export const keysByRows =
         code: 'Minus',
         keyCode: '89',
         location: locations.GENERAL,
-        keyName: keyTypes.KEY
+        keyType: keyType.KEY
       },
       {
         key: '=',
@@ -124,7 +111,7 @@ export const keysByRows =
         code: 'Equal',
         keyCode: 187,
         location: locations.GENERAL,
-        keyName: keyTypes.KEY
+        keyType: keyType.KEY
       },
       {
         key: 'Backspace',
@@ -132,7 +119,7 @@ export const keysByRows =
         code: 'Backspace',
         keyCode: 8,
         location: locations.GENERAL,
-        keyName: keyTypes.BACKSPACE
+        keyType: keyType.BACKSPACE
       },
     ],
     [
@@ -142,7 +129,7 @@ export const keysByRows =
         code: 'Tab',
         keyCode: 9,
         location: locations.GENERAL,
-        keyName: keyTypes.TAB
+        keyType: keyType.TAB
       },
       {
         key: 'q',
@@ -150,7 +137,7 @@ export const keysByRows =
         code: 'KeyQ',
         keyCode: 81,
         location: locations.GENERAL,
-        keyName: keyTypes.KEY
+        keyType: keyType.KEY
       },
       {
         key: 'w',
@@ -158,7 +145,7 @@ export const keysByRows =
         code: 'KeyW',
         keyCode: 87,
         location: locations.GENERAL,
-        keyName: keyTypes.KEY
+        keyType: keyType.KEY
       },
       {
         key: 'e',
@@ -166,7 +153,7 @@ export const keysByRows =
         code: 'KeyE',
         keyCode: 69,
         location: locations.GENERAL,
-        keyName: keyTypes.KEY
+        keyType: keyType.KEY
       },
       {
         key: 'r',
@@ -174,7 +161,7 @@ export const keysByRows =
         code: 'KeyR',
         keyCode: 82,
         location: locations.GENERAL,
-        keyName: keyTypes.KEY
+        keyType: keyType.KEY
       },
       {
         key: 't',
@@ -182,7 +169,7 @@ export const keysByRows =
         code: 'KeyT',
         keyCode: 84,
         location: locations.GENERAL,
-        keyName: keyTypes.KEY
+        keyType: keyType.KEY
       },
       {
         key: 'y',
@@ -190,7 +177,7 @@ export const keysByRows =
         code: 'KeyY',
         keyCode: 89,
         location: locations.GENERAL,
-        keyName: keyTypes.KEY
+        keyType: keyType.KEY
       },
       {
         key: 'u',
@@ -198,7 +185,7 @@ export const keysByRows =
         code: 'KeyU',
         keyCode: 85,
         location: locations.GENERAL,
-        keyName: keyTypes.KEY
+        keyType: keyType.KEY
       },
       {
         key: 'i',
@@ -206,7 +193,7 @@ export const keysByRows =
         code: 'KeyI',
         keyCode: 73,
         location: locations.GENERAL,
-        keyName: keyTypes.KEY
+        keyType: keyType.KEY
       },
       {
         key: 'o',
@@ -214,7 +201,7 @@ export const keysByRows =
         code: 'KeyO',
         keyCode: 79,
         location: locations.GENERAL,
-        keyName: keyTypes.KEY
+        keyType: keyType.KEY
       },
       {
         key: 'p',
@@ -222,7 +209,7 @@ export const keysByRows =
         code: 'KeyP',
         keyCode: 80,
         location: locations.GENERAL,
-        keyName: keyTypes.KEY
+        keyType: keyType.KEY
       },
       {
         key: '[',
@@ -230,7 +217,7 @@ export const keysByRows =
         code: 'BracketLeft',
         keyCode: 219,
         location: locations.GENERAL,
-        keyName: keyTypes.KEY
+        keyType: keyType.KEY
       },
       {
         key: ']',
@@ -238,7 +225,7 @@ export const keysByRows =
         code: 'BracketRight',
         keyCode: 221,
         location: locations.GENERAL,
-        keyName: keyTypes.KEY
+        keyType: keyType.KEY
       },
       {
         key: '\\',
@@ -246,7 +233,7 @@ export const keysByRows =
         code: 'Backslash',
         keyCode: 220,
         location: locations.GENERAL,
-        keyName: keyTypes.KEY
+        keyType: keyType.KEY
       }
     ],
     [
@@ -256,7 +243,7 @@ export const keysByRows =
         code: 'CapsLock',
         keyCode: 20,
         location: locations.GENERAL,
-        keyName: keyTypes.CAPSLOCK
+        keyType: keyType.CAPSLOCK
       },
       {
         key: 'a',
@@ -264,7 +251,7 @@ export const keysByRows =
         code: 'KeyA',
         keyCode: 65,
         location: locations.GENERAL,
-        keyName: keyTypes.KEY
+        keyType: keyType.KEY
       },
       {
         key: 's',
@@ -272,7 +259,7 @@ export const keysByRows =
         code: 'KeyS',
         keyCode: 83,
         location: locations.GENERAL,
-        keyName: keyTypes.KEY
+        keyType: keyType.KEY
       },
       {
         key: 'd',
@@ -280,7 +267,7 @@ export const keysByRows =
         code: 'KeyD',
         keyCode: 68,
         location: locations.GENERAL,
-        keyName: keyTypes.KEY
+        keyType: keyType.KEY
       },
       {
         key: 'f',
@@ -288,7 +275,7 @@ export const keysByRows =
         code: 'KeyF',
         keyCode: 70,
         location: locations.GENERAL,
-        keyName: keyTypes.KEY
+        keyType: keyType.KEY
       },
       {
         key: 'g',
@@ -296,7 +283,7 @@ export const keysByRows =
         code: 'KeyG',
         keyCode: 71,
         location: locations.GENERAL,
-        keyName: keyTypes.KEY
+        keyType: keyType.KEY
       },
       {
         key: 'h',
@@ -304,7 +291,7 @@ export const keysByRows =
         code: 'KeyH',
         keyCode: 72,
         location: locations.GENERAL,
-        keyName: keyTypes.KEY
+        keyType: keyType.KEY
       },
       {
         key: 'j',
@@ -312,7 +299,7 @@ export const keysByRows =
         code: 'KeyJ',
         keyCode: 74,
         location: locations.GENERAL,
-        keyName: keyTypes.KEY
+        keyType: keyType.KEY
       },
       {
         key: 'k',
@@ -320,7 +307,7 @@ export const keysByRows =
         code: 'KeyK',
         keyCode: 75,
         location: locations.GENERAL,
-        keyName: keyTypes.KEY
+        keyType: keyType.KEY
       },
       {
         key: 'l',
@@ -328,7 +315,7 @@ export const keysByRows =
         code: 'KeyL',
         keyCode: 76,
         location: locations.GENERAL,
-        keyName: keyTypes.KEY
+        keyType: keyType.KEY
       },
       {
         key: ';',
@@ -336,7 +323,7 @@ export const keysByRows =
         code: 'Semicolon',
         keyCode: 186,
         location: locations.GENERAL,
-        keyName: keyTypes.KEY
+        keyType: keyType.KEY
       },
       {
         key: '\'',
@@ -344,7 +331,7 @@ export const keysByRows =
         code: 'Quote',
         keyCode: 222,
         location: locations.GENERAL,
-        keyName: keyTypes.KEY
+        keyType: keyType.KEY
       },
       {
         key: 'Enter',
@@ -352,7 +339,7 @@ export const keysByRows =
         code: 'Enter',
         keyCode: 13,
         location: locations.LEFT_SIDE_MODIFIER_KEYS,
-        keyName: keyTypes.ENTER
+        keyType: keyType.ENTER
       }
     ],
     [
@@ -362,7 +349,7 @@ export const keysByRows =
         code: 'ShiftLeft',
         keyCode: 16,
         location: locations.LEFT_SIDE_MODIFIER_KEYS,
-        keyName: keyTypes.SHIFT
+        keyType: keyType.SHIFT
       },
       {
         key: 'z',
@@ -370,7 +357,7 @@ export const keysByRows =
         code: 'KeyZ',
         keyCode: 90,
         location: locations.GENERAL,
-        keyName: keyTypes.KEY
+        keyType: keyType.KEY
       },
       {
         key: 'x',
@@ -378,7 +365,7 @@ export const keysByRows =
         code: 'KeyX',
         keyCode: 88,
         location: locations.GENERAL,
-        keyName: keyTypes.KEY
+        keyType: keyType.KEY
       },
       {
         key: 'c',
@@ -386,7 +373,7 @@ export const keysByRows =
         code: 'KeyC',
         keyCode: 67,
         location: locations.GENERAL,
-        keyName: keyTypes.KEY
+        keyType: keyType.KEY
       },
       {
         key: 'v',
@@ -394,7 +381,7 @@ export const keysByRows =
         code: 'KeyV',
         keyCode: 86,
         location: locations.GENERAL,
-        keyName: keyTypes.KEY
+        keyType: keyType.KEY
       },
       {
         key: 'b',
@@ -402,7 +389,7 @@ export const keysByRows =
         code: 'KeyB',
         keyCode: 66,
         location: locations.GENERAL,
-        keyName: keyTypes.KEY
+        keyType: keyType.KEY
       },
       {
         key: 'n',
@@ -410,7 +397,7 @@ export const keysByRows =
         code: 'KeyN',
         keyCode: 78,
         location: locations.GENERAL,
-        keyName: keyTypes.KEY
+        keyType: keyType.KEY
       },
       {
         key: 'm',
@@ -418,7 +405,7 @@ export const keysByRows =
         code: 'KeyM',
         keyCode: 77,
         location: locations.GENERAL,
-        keyName: keyTypes.KEY
+        keyType: keyType.KEY
       },
       {
         key: ',',
@@ -426,7 +413,7 @@ export const keysByRows =
         code: 'Comma',
         keyCode: 188,
         location: locations.GENERAL,
-        keyName: keyTypes.KEY
+        keyType: keyType.KEY
       },
       {
         key: '.',
@@ -434,7 +421,7 @@ export const keysByRows =
         code: 'Period',
         keyCode: 190,
         location: locations.GENERAL,
-        keyName: keyTypes.KEY
+        keyType: keyType.KEY
       },
       {
         key: '/',
@@ -442,7 +429,7 @@ export const keysByRows =
         code: 'Slash',
         keyCode: 191,
         location: locations.GENERAL,
-        keyName: keyTypes.KEY
+        keyType: keyType.KEY
       },
       {
         key: '▲',
@@ -450,7 +437,7 @@ export const keysByRows =
         code: 'ArrowUp',
         keyCode: 38,
         location: locations.GENERAL,
-        keyName: keyTypes.ARROW
+        keyType: keyType.ARROW
       },
       {
         key: 'Shift',
@@ -458,7 +445,7 @@ export const keysByRows =
         code: 'ShiftRight',
         keyCode: 16,
         location: locations.RIGHT_SIDE_MODIFIER_KEYS,
-        keyName: keyTypes.SHIFT
+        keyType: keyType.SHIFT
       }
     ],
     [
@@ -468,7 +455,7 @@ export const keysByRows =
         code: 'ControlLeft',
         keyCode: 17,
         location: locations.LEFT_SIDE_MODIFIER_KEYS,
-        keyName: keyTypes.CONTROL
+        keyType: keyType.CONTROL
       },
       {
         key: 'Win',
@@ -476,7 +463,7 @@ export const keysByRows =
         code: 'MetaLeft',
         keyCode: 91,
         location: locations.LEFT_SIDE_MODIFIER_KEYS,
-        keyName: keyTypes.META
+        keyType: keyType.META
       },
       {
         key: 'Alt',
@@ -484,7 +471,7 @@ export const keysByRows =
         code: 'AltLeft',
         keyCode: 18,
         location: locations.LEFT_SIDE_MODIFIER_KEYS,
-        keyName: keyTypes.ALT
+        keyType: keyType.ALT
       },
       {
         key: '',
@@ -492,7 +479,7 @@ export const keysByRows =
         code: 'Space',
         keyCode: 32,
         location: locations.GENERAL,
-        keyName: keyTypes.SPACE
+        keyType: keyType.SPACE
       },
       {
         key: 'Alt',
@@ -500,7 +487,7 @@ export const keysByRows =
         code: 'AltRight',
         keyCode: 18,
         location: locations.RIGHT_SIDE_MODIFIER_KEYS,
-        keyName: keyTypes.ALT
+        keyType: keyType.ALT
       },
       {
         key: 'Ctrl',
@@ -508,7 +495,7 @@ export const keysByRows =
         code: 'ControlRight',
         keyCode: 17,
         location: locations.RIGHT_SIDE_MODIFIER_KEYS,
-        keyName: keyTypes.CONTROL
+        keyType: keyType.CONTROL
       },
       {
         key: '◄',
@@ -516,7 +503,7 @@ export const keysByRows =
         code: 'ArroLeft',
         keyCode: 37,
         location: locations.GENERAL,
-        keyName: keyTypes.ARROW
+        keyType: keyType.ARROW
       },
       {
         key: '▼',
@@ -524,7 +511,7 @@ export const keysByRows =
         code: 'ArrowDowwn',
         keyCode: 40,
         location: locations.GENERAL,
-        keyName: keyTypes.ARROW
+        keyType: keyType.ARROW
       },
       {
         key: '►',
@@ -532,7 +519,7 @@ export const keysByRows =
         code: 'ArrowRight',
         keyCode: 39,
         location: locations.GENERAL,
-        keyName: keyTypes.ARROW
+        keyType: keyType.ARROW
       }
     ]
   ]

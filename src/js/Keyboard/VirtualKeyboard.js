@@ -1,9 +1,9 @@
 import { GroupElement } from "../Base/GroupElement";
 import { KeyboardRow } from "./KeyboardRow";
-import { keysByRows } from "./static/Keys";
+import { keysByRows } from "./constants/Keys";
 import { cssClasses as buttonCssClasses } from "./Button";
-import { keyType } from "./static/KeyType";
-import { keyCase } from "./static/KeyCase";
+import { keyType } from "./constants/KeyType";
+import { keyCase } from "./constants/KeyCase";
 
 const cssClasses = {
   VIRTUAL_KEYBOARD: 'virtual-keyboard',

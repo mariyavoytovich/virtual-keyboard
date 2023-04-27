@@ -1,5 +1,5 @@
 import { ItemElement } from "../Base/ItemElement";
-import { keyCase } from "./static/KeyCase";
+import { keyCase } from "./constants/KeyCase";
 
 export const cssClasses = {
   KEYBOARD_BUTTON: 'keyboard-button',

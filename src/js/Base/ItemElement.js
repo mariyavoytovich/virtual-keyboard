@@ -2,8 +2,8 @@ import { UIElement } from "./UIElement";
 
 export class ItemElement extends UIElement {
 
-  show(container) {
-    const element = this.createElement();
+  show(container, props) {
+    const element = this.createElement(props);
     container.append(element);
   }
 }

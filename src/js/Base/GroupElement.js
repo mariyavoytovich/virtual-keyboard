@@ -3,10 +3,10 @@ import { UIElement } from "./UIElement";
 export class GroupElement extends UIElement {
   _elements = [];
 
-  show(container) {
-    const groupContainer = this.createElement();
+  show(container, props) {
+    const groupContainer = this.createElement(props);
     for (let element of this._elements) {
-      element.show(groupContainer);
+      element.show(groupContainer, props);
     }
     container.append(groupContainer);
   }

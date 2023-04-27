@@ -1,5 +1,5 @@
 export class UIElement {
-  show(container) {
+  show(container, props) {
   }
 
   createElement() { }

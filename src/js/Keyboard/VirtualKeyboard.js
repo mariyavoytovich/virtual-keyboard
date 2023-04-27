@@ -1,9 +1,10 @@
 import { GroupElement } from "../Base/GroupElement";
 import { KeyboardRow } from "./KeyboardRow";
-import { keysByRows } from "./constants/Keys";
 import { cssClasses as buttonCssClasses } from "./Button";
-import { keyType } from "./constants/KeyType";
-import { keyCase } from "./constants/KeyCase";
+import { KEY_TYPE } from "./constants/KeyType";
+import { KEY_CASE } from "./constants/KeyCase";
+import { KEYBOARD_SETTINGS } from "./constants/KeyboardSettings";
+import { KEYBOARD_ROWS } from "./constants/KeyboardRows";
 
 const cssClasses = {
   VIRTUAL_KEYBOARD: 'virtual-keyboard',
@@ -18,25 +19,27 @@ export class VirtualKeyboard extends GroupElement {
     super();
     this._textEditor = textEditor;
     this.state = {
-      case: keyCase.DOWN
+      case: KEYBOARD_SETTINGS.defaultKeyCase,
+      language: KEYBOARD_SETTINGS.defaultLanguage,
+      languages: KEYBOARD_SETTINGS.languages
     }
   }
 
   init() {
     this.createRows();
     this._eventHandlers = this.getButtonHandlers();
+    super.init();
   }
 
   createRows() {
-    for (let keysByRow of keysByRows) {
-      const row = new KeyboardRow();
-      row.init(keysByRow);
-      this.addElement(row);
+    for (let {id, buttons} of KEYBOARD_ROWS) {
+      const keyboardRow = new KeyboardRow(id, buttons);
+      this.addElement(keyboardRow);
     }
   }
 
   show(container) {
-    super.show(container);
+    super.show(container, this.state.language);
     this.toggleButtonsCharacterCase();
   }
 
@@ -105,11 +108,11 @@ export class VirtualKeyboard extends GroupElement {
   }
 
   isCapsLockButton(button){
-    return button.getAttribute('type') === keyType.CAPSLOCK;
+    return button.getAttribute('type') === KEY_TYPE.CAPSLOCK;
   }
 
   isShiftButton(button){
-    return button.getAttribute('type') === keyType.SHIFT;
+    return button.getAttribute('type') === KEY_TYPE.SHIFT;
   }
 
   getButtonHandler(button) {
@@ -119,13 +122,13 @@ export class VirtualKeyboard extends GroupElement {
 
   getButtonHandlers() {
     return {
-      [keyType.KEY]: this.keyButtonHandler.bind(this),
-      [keyType.BACKSPACE]: this.backspaceButtonHandler.bind(this),
-      [keyType.CAPSLOCK]: this.capsLockButtonHandler.bind(this),
-      [keyType.ENTER]: this.enterButtonHandler.bind(this),
-      [keyType.SPACE]: this.spaceButtonHandler.bind(this),
-      [keyType.TAB]: this.tabButtonHandler.bind(this),
-      [keyType.SHIFT]: this.shiftButtonHandler.bind(this)
+      [KEY_TYPE.KEY]: this.keyButtonHandler.bind(this),
+      [KEY_TYPE.BACKSPACE]: this.backspaceButtonHandler.bind(this),
+      [KEY_TYPE.CAPSLOCK]: this.capsLockButtonHandler.bind(this),
+      [KEY_TYPE.ENTER]: this.enterButtonHandler.bind(this),
+      [KEY_TYPE.SPACE]: this.spaceButtonHandler.bind(this),
+      [KEY_TYPE.TAB]: this.tabButtonHandler.bind(this),
+      [KEY_TYPE.SHIFT]: this.shiftButtonHandler.bind(this)
     }
   }
 
@@ -180,7 +183,7 @@ export class VirtualKeyboard extends GroupElement {
 
   toggleCase(){
     const currentCase = this.state.case;
-    const newCase = currentCase === keyCase.UP ? keyCase.DOWN : keyCase.UP;
+    const newCase = currentCase === KEY_CASE.UP ? KEY_CASE.DOWN : KEY_CASE.UP;
     this.state.case = newCase;
   }
 }

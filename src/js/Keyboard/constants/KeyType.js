@@ -1,4 +1,4 @@
-export const keyType = {
+export const KEY_TYPE = {
   KEY: 'key',
   BACKSPACE: 'backspace',
   TAB: 'tab',

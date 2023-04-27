@@ -1,6 +1,6 @@
 import { ItemElement } from "../Base/ItemElement";
 
-const cssClasses = {
+export const cssClasses = {
   KEYBOARD_BUTTON: 'keyboard-button',
   BUTTON: 'button'
 }

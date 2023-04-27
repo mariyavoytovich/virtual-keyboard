@@ -13,7 +13,7 @@ export class App {
     initElements(){
         const container = new AppContainer();
         const textEditor = new TextEditor();
-        const virtualKeyboard = new VirtualKeyboard();
+        const virtualKeyboard = new VirtualKeyboard(textEditor);
 
         container.addElements(textEditor, virtualKeyboard);
         container.init();

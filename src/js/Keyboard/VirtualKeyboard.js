@@ -21,7 +21,7 @@ export class VirtualKeyboard extends GroupElement {
     this.state = {
       case: KEYBOARD_SETTINGS.defaultKeyCase,
       language: KEYBOARD_SETTINGS.defaultLanguage,
-      languages: KEYBOARD_SETTINGS.languages
+      languages: KEYBOARD_SETTINGS.languages,
     }
   }
 
@@ -32,7 +32,7 @@ export class VirtualKeyboard extends GroupElement {
   }
 
   createRows() {
-    for (let {id, buttons} of KEYBOARD_ROWS) {
+    for (let { id, buttons } of KEYBOARD_ROWS) {
       const keyboardRow = new KeyboardRow(id, buttons);
       this.addElement(keyboardRow);
     }
@@ -53,66 +53,90 @@ export class VirtualKeyboard extends GroupElement {
   bindKeyboardEvents(keyboardElement) {
     keyboardElement.addEventListener('mousedown', (event) => this.mouseDownEventHandler(event));
     keyboardElement.addEventListener('mouseup', (event) => this.mouseUpEventHandler(event));
-    document.addEventListener('keyup', (event) =>this.keyUpEventHandler(event));
+    document.addEventListener('keyup', (event) => this.keyUpEventHandler(event));
     document.addEventListener('keydown', (event) => this.keyDownEventHandler(event));
   }
 
-  keyUpEventHandler(event){
+  keyUpEventHandler(event) {
     const code = event.code;
     const buttonElement = this._keyboard.querySelector(`.${code}`);
-    this.handleButtonUnpress(buttonElement);
+    if(!buttonElement)
+      return;
+
+    this.unpressButtonHandler(buttonElement);
   }
 
-  keyDownEventHandler(event){
+  keyDownEventHandler(event) {
+    console.log(event.repeat);
     const code = event.code;
     const buttonElement = this._keyboard.querySelector(`.${code}`);
-    this.pressButtonHandler(buttonElement);
+    if(!buttonElement)
+      return;
+
+    this.pressButtonHandler(buttonElement, event.repeat);
     event.preventDefault();
   }
 
   mouseDownEventHandler(event) {
+    console.log(event);
     const target = this.getTargetElement(event);
     if (this.isButton(target)) {
-      this.pressButtonHandler(target);
+      this.pressButtonHandler(target, event.repeat);
       event.preventDefault();
     }
   }
 
-  pressButtonHandler(button) {
-    if(!this.isCapsLockButton(button))
-      this.pressButton(button);
-    else 
-      this.togglePress(button);
-
-    this.handleButton(button);
+  pressButtonHandler(button, repeat) {
+    const buttonType = this.getButtonType(button);
+    switch (buttonType) {
+      case KEY_TYPE.CAPSLOCK:
+        if (!repeat) { this.togglePress(button), this.handleButton(button, buttonType) }
+        break;
+      case KEY_TYPE.SHIFT:
+        if (!repeat) { this.pressButton(button), this.handleButton(button, buttonType) }
+        break;
+      default:
+        !repeat && this.pressButton(button);
+        this.handleButton(button, buttonType);
+        break;
+    }
+    this.activeButton = button;
   }
 
-  handleButton(button){
-    const handler = this.getButtonHandler(button);
+  buttonIsPressed(button) {
+    return button.classList.contains(buttonCssClasses.PRESSED_BUTTON);
+  }
+
+  handleButton(button, buttonType) {
+    const handler = this.getButtonHandler(buttonType);
     handler(button);
+    console.log('handler');
   }
 
   pressButton(button) {
     button.classList.add(buttonCssClasses.PRESSED_BUTTON);
   }
 
-  togglePress(button){
+  togglePress(button) {
     button.classList.toggle(buttonCssClasses.PRESSED_BUTTON);
   }
 
   mouseUpEventHandler(event) {
     const target = this.getTargetElement(event);
     if (this.isButton(target))
-      this.handleButtonUnpress(target);
+      this.unpressButtonHandler(target);
   }
 
-  handleButtonUnpress(button){
-    if(!this.isCapsLockButton(button)) {
-      if(this.isShiftButton(button)){
-        this.handleButton(button)      
-      }
-      this.unpressButton(button);
+  unpressButtonHandler(button) {
+    const buttonType = this.getButtonType(button);
+    if (buttonType === KEY_TYPE.CAPSLOCK)
+      return;
+
+    if (buttonType === KEY_TYPE.SHIFT) {
+      this.handleButton(button, buttonType);
     }
+
+    this.unpressButton(button);
   }
 
   unpressButton(button) {
@@ -128,16 +152,7 @@ export class VirtualKeyboard extends GroupElement {
     return element.classList.contains(buttonCssClasses.KEYBOARD_BUTTON);
   }
 
-  isCapsLockButton(button){
-    return button.getAttribute('type') === KEY_TYPE.CAPSLOCK;
-  }
-
-  isShiftButton(button){
-    return button.getAttribute('type') === KEY_TYPE.SHIFT;
-  }
-
-  getButtonHandler(button) {
-    const buttonType = button.getAttribute('type');
+  getButtonHandler(buttonType) {
     return this._eventHandlers[buttonType];
   }
 
@@ -171,7 +186,7 @@ export class VirtualKeyboard extends GroupElement {
     this.toggleButtonsCharacterCase();
   }
 
-  shiftButtonHandler(button){
+  shiftButtonHandler(button) {
     this.toggleCase();
     this.toggleButtonsCharacterCase();
   }
@@ -202,9 +217,13 @@ export class VirtualKeyboard extends GroupElement {
     element.classList.remove(cssClasses.HIDDEN);
   }
 
-  toggleCase(){
+  toggleCase() {
     const currentCase = this.state.case;
     const newCase = currentCase === KEY_CASE.UP ? KEY_CASE.DOWN : KEY_CASE.UP;
     this.state.case = newCase;
+  }
+
+  getButtonType(button) {
+    return button.getAttribute('type');
   }
 }

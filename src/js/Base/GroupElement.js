@@ -4,11 +4,11 @@ export class GroupElement extends UIElement {
   _elements = [];
 
   show(container, props) {
-    const groupContainer = this.createElement(props);
+    const groupContainer = this.createElement(props) ?? container;
     for (let element of this._elements) {
       element.show(groupContainer, props);
     }
-    container.append(groupContainer);
+    groupContainer !== container && container.append(groupContainer);
   }
 
   addElements(...elements) {

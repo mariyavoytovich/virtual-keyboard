@@ -168,15 +168,17 @@ export class VirtualKeyboard extends GroupElement {
   }
 
   getButtonHandlers() {
-    return {
+    const eventHandlers = {
       [KEY_TYPE.KEY]: this.keyButtonHandler.bind(this),
       [KEY_TYPE.BACKSPACE]: this.backspaceButtonHandler.bind(this),
       [KEY_TYPE.CAPSLOCK]: this.capsLockButtonHandler.bind(this),
       [KEY_TYPE.ENTER]: this.enterButtonHandler.bind(this),
       [KEY_TYPE.SPACE]: this.spaceButtonHandler.bind(this),
       [KEY_TYPE.TAB]: this.tabButtonHandler.bind(this),
-      [KEY_TYPE.SHIFT]: this.shiftButtonHandler.bind(this)
+      [KEY_TYPE.SHIFT]: this.shiftButtonHandler.bind(this),
     }
+    eventHandlers[KEY_TYPE.ARROW] = eventHandlers[KEY_TYPE.KEY];
+    return eventHandlers;
   }
 
   keyButtonHandler(button) {

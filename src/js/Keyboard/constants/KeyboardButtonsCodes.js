@@ -59,7 +59,7 @@ export const KEYBOARD_BUTTONS_CODES = {
     SPACE: 'Space',
     ALT_RIGHT: 'AltRight',
     CONTROL_RIGHT: 'ControlRight',
-    ARROW_LEFT: 'ArroLeft',
-    ARROW_DOWN: 'ArrowDowwn',
+    ARROW_LEFT: 'ArrowLeft',
+    ARROW_DOWN: 'ArrowDown',
     ARROW_RIGHT:'ArrowRight'
 }

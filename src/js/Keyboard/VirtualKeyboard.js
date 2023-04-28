@@ -11,6 +11,8 @@ const cssClasses = {
   HIDDEN: 'hidden'
 }
 
+const LOCAL_STORE_LANGUAGE_ITEM = 'lang';
+
 export class VirtualKeyboard extends GroupElement {
   _eventHandlers;
   _keyboard;
@@ -26,9 +28,16 @@ export class VirtualKeyboard extends GroupElement {
   }
 
   init() {
+    this.initLanguage();
     this.createRows();
     this._eventHandlers = this.getButtonHandlers();
     super.init();
+  }
+
+  initLanguage(){
+    const storedLanguage = localStorage.getItem(LOCAL_STORE_LANGUAGE_ITEM);
+    if(storedLanguage)
+      this.state.language = storedLanguage;
   }
 
   createRows() {
@@ -230,12 +239,22 @@ export class VirtualKeyboard extends GroupElement {
   }
 
   toggleLanguage(){
+    const newLanguage = this.getNextLanguage();
+    this.state.language = newLanguage;
+    this.saveLanguage();
+    this.refresh(this.state.language);
+  }
+
+  getNextLanguage(){
     const currentLanguage = this.state.language;
     const indexCurrentLanguage = this.state.languages.indexOf(currentLanguage);
     let indexOfNextLanguage = indexCurrentLanguage + 1;
     if (indexOfNextLanguage >= this.state.languages.length)
       indexOfNextLanguage = 0;
-    this.state.language = this.state.languages[indexOfNextLanguage];
-    this.refresh(this.state.language);
+    return this.state.languages[indexOfNextLanguage];
+  }
+
+  saveLanguage(){
+    localStorage.setItem(LOCAL_STORE_LANGUAGE_ITEM, this.state.language);
   }
 }

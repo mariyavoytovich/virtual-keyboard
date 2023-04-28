@@ -86,7 +86,6 @@ export class VirtualKeyboard extends GroupElement {
   }
 
   mouseDownEventHandler(event) {
-    console.log(event);
     const target = this.getTargetElement(event);
     if (this.isButton(target)) {
       this.pressButtonHandler(target, event);
@@ -120,7 +119,6 @@ export class VirtualKeyboard extends GroupElement {
   handleButton(button, buttonType) {
     const handler = this.getButtonHandler(buttonType);
     handler && handler(button);
-    console.log('handler');
   }
 
   pressButton(button) {

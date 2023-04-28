@@ -60,7 +60,6 @@ export const RU = {
   [KEYBOARD_BUTTONS_CODES.ALT_LEFT]: { key: 'Alt', shiftKey: 'Alt' },
   [KEYBOARD_BUTTONS_CODES.ALT_RIGHT]: { key: 'Alt', shiftKey: 'Alt' },
   [KEYBOARD_BUTTONS_CODES.SPACE]: { key: '', shiftKey: '' },
-  [KEYBOARD_BUTTONS_CODES.ARROW_RIGHT]: { key: 'Alt', shiftKey: 'Alt' },
   [KEYBOARD_BUTTONS_CODES.CONTROL_RIGHT]: { key: 'Ctrl', shiftKey: 'Ctrl' },
   [KEYBOARD_BUTTONS_CODES.ARROW_LEFT]: { key: '◄', shiftKey: '◄' },
   [KEYBOARD_BUTTONS_CODES.ARROW_DOWN]: { key: '▼', shiftKey: '▼' },

@@ -20,6 +20,10 @@ export class GroupElement extends UIElement {
   }
 
   init() {
-    this._elements.forEach(component => component.init());
+    this._elements.forEach(element => element.init());
+  }
+
+  refresh(props) {
+    this._elements.forEach(element => element.refresh(props));
   }
 }

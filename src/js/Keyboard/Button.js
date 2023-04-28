@@ -54,4 +54,15 @@ export class Button extends ItemElement {
     this._keyDown.textContent = key;
     this._keyUp.textContent = shiftKey;
   }
+
+  refresh(language){
+    this.updatesKeysElements(language);
+  }
+
+  updatesKeysElements(language){
+    const { key, shiftKey } = getButtonKeyValuesByLanguage(this._code, language);
+
+    this._keyDown.textContent = key;
+    this._keyUp.textContent = shiftKey;
+  }
 }

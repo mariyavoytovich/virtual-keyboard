@@ -73,7 +73,7 @@ export class VirtualKeyboard extends GroupElement {
     if(!buttonElement)
       return;
 
-    this.pressButtonHandler(buttonElement, event.repeat);
+    this.pressButtonHandler(buttonElement, event);
     event.preventDefault();
   }
 
@@ -81,12 +81,14 @@ export class VirtualKeyboard extends GroupElement {
     console.log(event);
     const target = this.getTargetElement(event);
     if (this.isButton(target)) {
-      this.pressButtonHandler(target, event.repeat);
+      this.pressButtonHandler(target, event);
       event.preventDefault();
     }
   }
 
-  pressButtonHandler(button, repeat) {
+  pressButtonHandler(button, event) {
+    const repeat = event.repeat;
+
     const buttonType = this.getButtonType(button);
     switch (buttonType) {
       case KEY_TYPE.CAPSLOCK:
@@ -100,7 +102,7 @@ export class VirtualKeyboard extends GroupElement {
         this.handleButton(button, buttonType);
         break;
     }
-    this.activeButton = button;
+    event.altKey && event.ctrlKey && this.toggleLanguage();
   }
 
   buttonIsPressed(button) {
@@ -109,7 +111,7 @@ export class VirtualKeyboard extends GroupElement {
 
   handleButton(button, buttonType) {
     const handler = this.getButtonHandler(buttonType);
-    handler(button);
+    handler && handler(button);
     console.log('handler');
   }
 
@@ -225,5 +227,15 @@ export class VirtualKeyboard extends GroupElement {
 
   getButtonType(button) {
     return button.getAttribute('type');
+  }
+
+  toggleLanguage(){
+    const currentLanguage = this.state.language;
+    const indexCurrentLanguage = this.state.languages.indexOf(currentLanguage);
+    let indexOfNextLanguage = indexCurrentLanguage + 1;
+    if (indexOfNextLanguage >= this.state.languages.length)
+      indexOfNextLanguage = 0;
+    this.state.language = this.state.languages[indexOfNextLanguage];
+    this.refresh(this.state.language);
   }
 }

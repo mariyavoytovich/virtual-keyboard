@@ -11,4 +11,6 @@ export class UIElement {
   };
 
   init() {}
+
+  refresh(props){}
 }

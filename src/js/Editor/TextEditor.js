@@ -57,6 +57,8 @@ export class TextEditor extends ItemElement {
 
   removeLeft(){
     const selectionStart = this._textArea.selectionStart;
+    if(selectionStart === 0)
+      return;
     const removedCharIndex = selectionStart - 1;  
     this.removeChar(removedCharIndex);
     this.setTextAreaSelection(removedCharIndex);

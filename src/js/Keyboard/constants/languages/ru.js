@@ -63,5 +63,6 @@ export const RU = {
   [KEYBOARD_BUTTONS_CODES.CONTROL_RIGHT]: { key: 'Ctrl', shiftKey: 'Ctrl' },
   [KEYBOARD_BUTTONS_CODES.ARROW_LEFT]: { key: '◄', shiftKey: '◄' },
   [KEYBOARD_BUTTONS_CODES.ARROW_DOWN]: { key: '▼', shiftKey: '▼' },
-  [KEYBOARD_BUTTONS_CODES.ARROW_RIGHT]: { key: '►', shiftKey: '►' }
+  [KEYBOARD_BUTTONS_CODES.ARROW_RIGHT]: { key: '►', shiftKey: '►' },
+  [KEYBOARD_BUTTONS_CODES.DELETE]: {key: 'Del', shiftKey: 'Del'}
 }

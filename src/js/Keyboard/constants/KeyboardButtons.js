@@ -105,5 +105,7 @@ export const KEYBOARD_BUTTONS =
     },
     [KEYBOARD_BUTTONS_CODES.ARROW_RIGHT]: { location: locations.GENERAL,
       keyType: KEY_TYPE.ARROW
-    }
+    },
+
+    [KEYBOARD_BUTTONS_CODES.DELETE]: { location: locations.GENERAL, keyType: KEY_TYPE.DELETE}
   }

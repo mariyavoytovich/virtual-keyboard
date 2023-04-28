@@ -9,5 +9,6 @@ export const KEY_TYPE = {
   CONTROL: 'control',
   SPACE: 'space',
   ALT: 'alt',
-  META: 'meta'
+  META: 'meta',
+  DELETE: 'delete'
 }

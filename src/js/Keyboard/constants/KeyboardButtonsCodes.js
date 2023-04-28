@@ -61,5 +61,6 @@ export const KEYBOARD_BUTTONS_CODES = {
     CONTROL_RIGHT: 'ControlRight',
     ARROW_LEFT: 'ArrowLeft',
     ARROW_DOWN: 'ArrowDown',
-    ARROW_RIGHT:'ArrowRight'
+    ARROW_RIGHT:'ArrowRight',
+    DELETE: 'Delete'
 }

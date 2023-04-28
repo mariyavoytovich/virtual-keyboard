@@ -175,6 +175,7 @@ export class VirtualKeyboard extends GroupElement {
       [KEY_TYPE.SPACE]: this.spaceButtonHandler.bind(this),
       [KEY_TYPE.TAB]: this.tabButtonHandler.bind(this),
       [KEY_TYPE.SHIFT]: this.shiftButtonHandler.bind(this),
+      [KEY_TYPE.DELETE]: this.deleteButtonHandler.bind(this)
     }
     eventHandlers[KEY_TYPE.ARROW] = eventHandlers[KEY_TYPE.KEY];
     return eventHandlers;
@@ -187,6 +188,10 @@ export class VirtualKeyboard extends GroupElement {
 
   backspaceButtonHandler(button) {
     this._textEditor.removeLeft();
+  }
+
+  deleteButtonHandler(button) {
+    this._textEditor.removeRight();
   }
 
   spaceButtonHandler(button) {

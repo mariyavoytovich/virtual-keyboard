@@ -22,9 +22,9 @@ export class TextEditor extends ItemElement {
     const selectionStart = this._textArea.selectionStart;
     const oldValue = this._textArea.value;
 
-    const newValue = oldValue.length === selectionStart 
-                      ? this.appendValue(oldValue, value)
-                      : this.insertValue(oldValue, value, selectionStart);
+    const newValue = oldValue.length === selectionStart
+      ? this.appendValue(oldValue, value)
+      : this.insertValue(oldValue, value, selectionStart);
 
     this._textArea.value = newValue;
 
@@ -44,31 +44,43 @@ export class TextEditor extends ItemElement {
     return `${prefix}${value}${suffix}`;
   }
 
-  setTextAreaSelection(start, end){
-    if(!end)
+  setTextAreaSelection(start, end) {
+    if (!end)
       end = start;
-      
+
     this._textArea.setSelectionRange(start, end);
   }
 
-  focus(){
+  focus() {
     this._textArea.focus();
   }
 
-  removeLeft(){
+  removeLeft() {
     const selectionStart = this._textArea.selectionStart;
-    if(selectionStart === 0)
+    if (selectionStart === 0)
       return;
-    const removedCharIndex = selectionStart - 1;  
-    this.removeChar(removedCharIndex);
-    this.setTextAreaSelection(removedCharIndex);
+    const removedCharIndex = selectionStart - 1;
+    this.removeAt(removedCharIndex);
+  }
+
+  removeAt(removeIndex){
+    this.removeChar(removeIndex);
+    this.setTextAreaSelection(removeIndex);
     this.focus();
   }
 
-  removeChar(index){
+  removeChar(index) {
     const oldValue = this._textArea.value;
     const prefix = oldValue.substring(0, index);
     const suffix = oldValue.substring(index + 1);
     this._textArea.value = `${prefix}${suffix}`;
+  }
+
+  removeRight() {
+    const selectionStart = this._textArea.selectionStart;
+    if (selectionStart === this._textArea.value.length)
+      return;
+    const removedCharIndex = selectionStart;
+    this.removeAt(removedCharIndex);
   }
 }

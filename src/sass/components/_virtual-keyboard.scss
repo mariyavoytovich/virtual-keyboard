@@ -32,7 +32,8 @@
   &.arrow-button,
   &.control-button,
   &.alt-button,
-  &.meta-button {
+  &.meta-button,
+  &.delete-button {
     background-color: $control-button-color;
     font-weight: $font-weight;
   }

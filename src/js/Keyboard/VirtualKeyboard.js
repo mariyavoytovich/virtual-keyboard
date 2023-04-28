@@ -76,14 +76,13 @@ export class VirtualKeyboard extends GroupElement {
   }
 
   keyDownEventHandler(event) {
-    console.log(event.repeat);
+    event.preventDefault();
     const code = event.code;
     const buttonElement = this._keyboard.querySelector(`.${code}`);
     if(!buttonElement)
       return;
 
     this.pressButtonHandler(buttonElement, event);
-    event.preventDefault();
   }
 
   mouseDownEventHandler(event) {

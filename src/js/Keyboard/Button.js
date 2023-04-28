@@ -22,7 +22,8 @@ export class Button extends ItemElement {
       cssClasses.KEYBOARD_BUTTON,
       cssClasses.BUTTON,
       `${this._keyType}-${cssClasses.BUTTON}`,
-      this._location]
+      this._location,
+      this._code]
 
     const button = this.createDomNode('div', ...buttonClasses);
     button.setAttribute('type', this._keyType);

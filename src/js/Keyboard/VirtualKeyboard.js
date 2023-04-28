@@ -53,12 +53,28 @@ export class VirtualKeyboard extends GroupElement {
   bindKeyboardEvents(keyboardElement) {
     keyboardElement.addEventListener('mousedown', (event) => this.mouseDownEventHandler(event));
     keyboardElement.addEventListener('mouseup', (event) => this.mouseUpEventHandler(event));
+    document.addEventListener('keyup', (event) =>this.keyUpEventHandler(event));
+    document.addEventListener('keydown', (event) => this.keyDownEventHandler(event));
+  }
+
+  keyUpEventHandler(event){
+    const code = event.code;
+    const buttonElement = this._keyboard.querySelector(`.${code}`);
+    this.handleButtonUnpress(buttonElement);
+  }
+
+  keyDownEventHandler(event){
+    const code = event.code;
+    const buttonElement = this._keyboard.querySelector(`.${code}`);
+    this.pressButtonHandler(buttonElement);
+    event.preventDefault();
   }
 
   mouseDownEventHandler(event) {
     const target = this.getTargetElement(event);
     if (this.isButton(target)) {
       this.pressButtonHandler(target);
+      event.preventDefault();
     }
   }
 
@@ -86,11 +102,16 @@ export class VirtualKeyboard extends GroupElement {
 
   mouseUpEventHandler(event) {
     const target = this.getTargetElement(event);
-    if (this.isButton(target) && !this.isCapsLockButton(target)) {
-      if(this.isShiftButton(target)){
-        this.handleButton(target)      
+    if (this.isButton(target))
+      this.handleButtonUnpress(target);
+  }
+
+  handleButtonUnpress(button){
+    if(!this.isCapsLockButton(button)) {
+      if(this.isShiftButton(button)){
+        this.handleButton(button)      
       }
-      this.unpressButton(target);
+      this.unpressButton(button);
     }
   }
 

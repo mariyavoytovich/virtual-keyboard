@@ -102,7 +102,7 @@ export class VirtualKeyboard extends GroupElement {
         this.handleButton(button, buttonType);
         break;
     }
-    event.altKey && event.ctrlKey && this.toggleLanguage();
+    !repeat && event.altKey && event.ctrlKey && this.toggleLanguage();
   }
 
   buttonIsPressed(button) {

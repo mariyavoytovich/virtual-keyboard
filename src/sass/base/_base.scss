@@ -1,0 +1,29 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+}
+
+.body{
+    padding: 10px 0;
+}
+
+.wrapper{
+    margin: 0 auto;
+    max-width: $container-max-widht;
+    width: 100%;
+    font-family: "Trebuchet MS", "Helvetica", sans-serif;
+    @include font($size: 1.5rem, $height: 2.4rem, $weight: $font-weight);
+}
+
+.hidden{
+    display: none;
+}
+
+.heading{
+    text-align: center;
+}

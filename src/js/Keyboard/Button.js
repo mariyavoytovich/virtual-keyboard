@@ -16,7 +16,7 @@ export class Button extends ItemElement {
     this._location = location;
     this._keyType = keyType;
   }
-  
+
   createElement(language) {
     const buttonClasses = [
       cssClasses.KEYBOARD_BUTTON,
@@ -42,17 +42,6 @@ export class Button extends ItemElement {
     const keyElement = this.createDomNode('span', caseKey);
     keyElement.textContent = key;
     return keyElement;
-  }
-
-  toggleLanguage(language) {
-    keyboard.addEventListener('language-changed', (event) => this.languageChangedHandler(event));
-  }
-
-  languageChangedHandler(event) {
-    const { newLanguage } = event;
-    const { key, shiftKey } = getButtonKeyValuesByLanguage(this._code, newLanguage);
-    this._keyDown.textContent = key;
-    this._keyUp.textContent = shiftKey;
   }
 
   refresh(language){

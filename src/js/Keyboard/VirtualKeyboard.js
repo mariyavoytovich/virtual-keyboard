@@ -184,33 +184,33 @@ export class VirtualKeyboard extends GroupElement {
     this._textEditor.print(printedElement.textContent);
   }
 
-  backspaceButtonHandler(button) {
+  backspaceButtonHandler() {
     this._textEditor.removeLeft();
   }
 
-  deleteButtonHandler(button) {
+  deleteButtonHandler() {
     this._textEditor.removeRight();
   }
 
-  spaceButtonHandler(button) {
+  spaceButtonHandler() {
     this._textEditor.print(' ');
   }
 
-  capsLockButtonHandler(button) {
+  capsLockButtonHandler() {
     this.toggleCase();
     this.toggleButtonsCharacterCase();
   }
 
-  shiftButtonHandler(button) {
+  shiftButtonHandler() {
     this.toggleCase();
     this.toggleButtonsCharacterCase();
   }
 
-  enterButtonHandler(button) {
+  enterButtonHandler() {
     this._textEditor.print('\n');
   }
 
-  tabButtonHandler(button) {
+  tabButtonHandler() {
     this._textEditor.print('    ');
   }
 

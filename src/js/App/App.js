@@ -1,5 +1,4 @@
 import { SectionElement } from "../Base/SectionElement";
-import { UIElement } from "../Base/UIElement";
 import { TextEditor } from "../Editor/TextEditor";
 import { VirtualKeyboard } from "../Keyboard/VirtualKeyboard";
 import { AppContainer } from "./AppContainer";
